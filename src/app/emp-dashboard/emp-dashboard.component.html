@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color:white ;">Employee Management CRUD 2</h1>
+    <div class="d-flex">
+      <button type="button" (click)="onAddClicked()"  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add Employee
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body mb-3">
+        <form [formGroup]="detailsForm">
+          <div class="mb-3">
+            <label class="form-label">Employee Id</label>
+            <input type="text" class="form-control" formControlName="empId">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone No.</label>
+            <input type="text" class="form-control" formControlName="phone">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Salary</label>
+            <input type="text" class="form-control" formControlName="salary">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Close</button>
+        <button type="button" class="btn btn-primary" *ngIf="showAdd"  (click)="postEmpDetails()">Add</button>
+        <button type="button" class="btn btn-primary" *ngIf="showUpdate" (click)="onUpdateClicked()">Update</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of employeeData">
+      <td>{{data.empId}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.phone}}</td>
+      <td>{{data.salary}}</td>
+      <td>
+        <button class="btn btn-info" (click)="onEditClicked(data)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button>
+        <button class="btn btn-danger mx-3" (click)="deleteEmpDetails(data)">Delete</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>

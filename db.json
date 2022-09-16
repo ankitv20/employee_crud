@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "empId": "sdf",
+      "name": "zxcfb",
+      "email": "QCVB",
+      "phone": "XCV",
+      "salary": "XCG",
+      "id": 6
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

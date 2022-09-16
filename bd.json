@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "empId": "dfgh",
+      "name": "dfg",
+      "email": "fth",
+      "phone": "ftrgh",
+      "salary": "dftg",
+      "id": 1
+    },
+    {
+      "empId": "dsf",
+      "name": "dgb",
+      "email": "xcg",
+      "phone": "vn",
+      "salary": "vbn",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
